@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 14:51:51 by gwood             #+#    #+#             */
-/*   Updated: 2018/02/20 20:12:28 by gwood            ###   ########.fr       */
+/*   Created: 2018/02/20 20:22:35 by gwood             #+#    #+#             */
+/*   Updated: 2018/02/20 20:52:45 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
+	void *save;
+
+	save = dst;
+	while (n--)
+	{
+		*(t_byte *)dst++ = *(t_byte *)src++;
+	}
+
+	return (save);
 }

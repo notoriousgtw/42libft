@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 14:51:51 by gwood             #+#    #+#             */
-/*   Updated: 2018/02/20 20:12:28 by gwood            ###   ########.fr       */
+/*   Created: 2018/02/20 19:20:29 by gwood             #+#    #+#             */
+/*   Updated: 2018/02/20 23:18:32 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+void	*ft_memalloc(size_t size)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
+	void *mem; 
+		
+	mem = NULL;
+	if ((mem = (void *)malloc(size)))
+		ft_bzero(mem, size);
+	return (mem);
 }

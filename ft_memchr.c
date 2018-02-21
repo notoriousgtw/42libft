@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 14:51:51 by gwood             #+#    #+#             */
-/*   Updated: 2018/02/20 20:12:28 by gwood            ###   ########.fr       */
+/*   Created: 2018/02/20 21:33:26 by gwood             #+#    #+#             */
+/*   Updated: 2018/02/20 22:01:11 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
+	while (n--)
+	{
+		if (*(t_byte *)s == (t_byte)c)
+			return ((void *)s);
+		s++;
+	}
+	return (NULL);
 }

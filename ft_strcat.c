@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 14:51:51 by gwood             #+#    #+#             */
-/*   Updated: 2018/02/20 20:12:28 by gwood            ###   ########.fr       */
+/*   Created: 2018/02/20 22:28:53 by gwood             #+#    #+#             */
+/*   Updated: 2018/02/20 22:49:42 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
+	char *save;
+
+	save = s1;
+	while (*s1)
+			s1++;
+	ft_strcpy(s1, s2);
+
+	return (save);
 }

@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   libft_typedefs.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 14:51:51 by gwood             #+#    #+#             */
-/*   Updated: 2018/02/20 20:12:28 by gwood            ###   ########.fr       */
+/*   Created: 2018/02/20 19:51:13 by gwood             #+#    #+#             */
+/*   Updated: 2018/02/20 22:08:05 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBF_TYPEDEFS_H
+# define LIBF_TYPEDEFS_H
 
-int		ft_tolower(int c)
+typedef unsigned char	t_byte;
+typedef struct			s_list
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
-}
+	void				*content;
+	size_t				content_size;
+	struct s_list		*next;
+}						t_list;
+
+#endif
