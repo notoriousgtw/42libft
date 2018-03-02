@@ -6,7 +6,7 @@
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 22:13:42 by gwood             #+#    #+#             */
-/*   Updated: 2018/02/20 22:54:51 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/01 15:42:11 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ char	*ft_strcpy(char *dst, const char *src)
 	char *save;
 
 	save = dst;
-	while(*src)
+	while (*src)
 		*dst++ = *src++;
 	*dst++ = 0;
-
 	return (save);
 }

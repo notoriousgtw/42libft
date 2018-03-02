@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_iswspace.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/20 19:20:29 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/01 15:45:25 by gwood            ###   ########.fr       */
+/*   Created: 2018/02/26 18:12:16 by gwood             #+#    #+#             */
+/*   Updated: 2018/02/26 18:13:33 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int		ft_iswspace(int c)
 {
-	void *mem;
-
-	mem = NULL;
-	if ((mem = (void *)malloc(size)))
-		ft_bzero(mem, size);
-	return (mem);
+	return ((9 <= c && c <= 13) || c == 32);
 }

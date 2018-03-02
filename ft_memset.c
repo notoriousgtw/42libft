@@ -6,7 +6,7 @@
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 19:31:56 by gwood             #+#    #+#             */
-/*   Updated: 2018/02/20 20:17:29 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/01 15:47:54 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@ void	*ft_memset(void *b, int c, size_t len)
 	bstr = (t_byte *)b;
 	while (len--)
 		*bstr++ = (t_byte)c;
-
 	return (b);
 }

@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strapp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/20 19:20:29 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/01 15:45:25 by gwood            ###   ########.fr       */
+/*   Created: 2018/02/27 10:30:25 by gwood             #+#    #+#             */
+/*   Updated: 2018/02/27 10:59:08 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+char	*ft_strapp(const char *s, char c)
 {
-	void *mem;
+	char *str;
+	char *str_it;
 
-	mem = NULL;
-	if ((mem = (void *)malloc(size)))
-		ft_bzero(mem, size);
-	return (mem);
+	if ((str = ft_strnew((size_t)ft_strlen((char *)s) + 1)))
+	{
+		str_it = str;
+		while (*s)
+			*str_it++ = *s++;
+		*str_it++ = c;
+		*str_it = 0;
+	}
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 23:26:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/02/20 23:34:53 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/01 15:44:47 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@ char	*ft_strnew(size_t size)
 	str = ft_memalloc(size + 1);
 	if (str)
 		ft_bzero(str, size + 1);
-
 	return (str);
 }

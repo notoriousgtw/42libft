@@ -6,12 +6,12 @@
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 19:51:13 by gwood             #+#    #+#             */
-/*   Updated: 2018/02/20 22:08:05 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/01 15:29:47 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBF_TYPEDEFS_H
-# define LIBF_TYPEDEFS_H
+#ifndef LIBFT_TYPEDEFS_H
+# define LIBFT_TYPEDEFS_H
 
 typedef unsigned char	t_byte;
 typedef struct			s_list
