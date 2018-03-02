@@ -6,7 +6,7 @@
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 17:07:40 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/01 21:42:07 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/01 21:44:07 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char		**ft_strsplit(const char *s, char c)
 	i = 0;
 	k = 0;
 	if (!s)
-		return (NULL)
+		return (NULL);
 	if (!(ret = (char **)malloc(sizeof(char *) * (ft_cntwrd(s, c)) + 1)))
 		return (NULL);
 	while (s[i])
