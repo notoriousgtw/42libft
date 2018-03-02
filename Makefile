@@ -6,11 +6,13 @@
 #    By: gwood <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/20 15:11:46 by gwood             #+#    #+#              #
-#    Updated: 2018/03/01 21:30:30 by gwood            ###   ########.fr        #
+#    Updated: 2018/03/01 21:36:33 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+HEADERS = libft libft_typedefs
 
 FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 		 ft_memcmp ft_strlen ft_strdup ft_strcpy ft_strncpy ft_strcat \
@@ -26,6 +28,7 @@ FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 
 RM = /bin/rm -f
 
+HFILES = $(patsubst %, %.h, $(HEADERS))
 CFILES = $(patsubst %, %.c, $(FUNCTS))
 OBJECTS = $(patsubst %, %.o, $(FUNCTS))
 FLAGS = -Wall -Wextra -Werror
@@ -35,7 +38,7 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	gcc -c $(FLAGS) $(CFILES)
+	gcc -c $(FLAGS) $(CFILES) $(HFILES)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
