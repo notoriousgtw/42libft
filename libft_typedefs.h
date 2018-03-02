@@ -6,14 +6,14 @@
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 19:51:13 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/01 21:59:44 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/01 22:02:11 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_TYPEDEFS_H
 # define LIBFT_TYPEDEFS_H
 
-# include <stdlib.h> 
+# include <stdlib.h>
 
 typedef unsigned char	t_byte;
 typedef struct			s_list
