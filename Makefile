@@ -6,7 +6,7 @@
 #    By: gwood <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/20 15:11:46 by gwood             #+#    #+#              #
-#    Updated: 2018/03/01 21:36:33 by gwood            ###   ########.fr        #
+#    Updated: 2018/03/01 21:57:02 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	gcc -c $(FLAGS) $(CFILES) $(HFILES)
+	gcc -c $(FLAGS) $(CFILES)$(HFILES)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
