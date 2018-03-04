@@ -6,7 +6,7 @@
 #    By: gwood <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/20 15:11:46 by gwood             #+#    #+#              #
-#    Updated: 2018/03/03 19:06:59 by gwood            ###   ########.fr        #
+#    Updated: 2018/03/03 19:09:10 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 		 ft_strsplit ft_itoa ft_putchar ft_putstr ft_putendl ft_putnbr \
 		 ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 		 ft_lstnew ft_lstdelone ft_lstdel ft_lstadd ft_lstiter ft_lstmap \
-		 ft_iswspace ft_strndup ft_cntwr 
+		 ft_iswspace ft_strndup ft_cntwrd 
 
 RM = rm -f
 
