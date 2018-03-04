@@ -6,13 +6,11 @@
 #    By: gwood <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/20 15:11:46 by gwood             #+#    #+#              #
-#    Updated: 2018/03/03 18:26:56 by gwood            ###   ########.fr        #
+#    Updated: 2018/03/03 19:06:59 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-HEADERS = libft
 
 FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 		 ft_memcmp ft_strlen ft_strdup ft_strcpy ft_strncpy ft_strcat \
@@ -24,11 +22,10 @@ FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 		 ft_strsplit ft_itoa ft_putchar ft_putstr ft_putendl ft_putnbr \
 		 ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 		 ft_lstnew ft_lstdelone ft_lstdel ft_lstadd ft_lstiter ft_lstmap \
-		 ft_iswspace ft_strndup
+		 ft_iswspace ft_strndup ft_cntwr 
 
 RM = rm -f
 
-HFILES = $(patsubst %, %.h, $(HEADERS))
 CFILES = $(patsubst %, %.c, $(FUNCTS))
 OBJECTS = $(patsubst %, %.o, $(FUNCTS))
 FLAGS = -Wall -Wextra -Werror
@@ -38,7 +35,7 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	gcc -c $(FLAGS) $(CFILES)$(HFILES)
+	gcc -c $(FLAGS) $(CFILES)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
