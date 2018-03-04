@@ -6,13 +6,13 @@
 #    By: gwood <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/20 15:11:46 by gwood             #+#    #+#              #
-#    Updated: 2018/03/01 22:17:05 by gwood            ###   ########.fr        #
+#    Updated: 2018/03/03 18:26:56 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-HEADERS = libft libft_typedefs
+HEADERS = libft
 
 FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 		 ft_memcmp ft_strlen ft_strdup ft_strcpy ft_strncpy ft_strcat \
