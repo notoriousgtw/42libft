@@ -6,7 +6,7 @@
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/03 19:03:58 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/05 15:12:19 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,7 @@ t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int						ft_iswspace(int c);
 char					*ft_strndup(const char *s, size_t n);
 int						ft_cntwrd(const char *s, char c);
+char					*ft_strcase(const char *s);
+char					*ft_strtoupper(const char *s);
+char					*ft_strtolower(const char *s);
 #endif
