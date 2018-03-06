@@ -6,7 +6,7 @@
 /*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 15:00:31 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/05 15:11:17 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/05 17:05:27 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char	*ft_strtoupper(const char *s)
 		return (NULL);
 	if (!(str = ft_strdup(s)))
 		return (NULL);
-	i = 0;
-	while (str[i])
-		str[i] = ft_toupper(str[i++]);
+	i = -1;
+	while (str[++i])
+		str[i] = ft_toupper(str[i]);
 	return (str);
 }
