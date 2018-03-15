@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putbits_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 16:13:52 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/14 16:53:21 by gwood            ###   ########.fr       */
+/*   Created: 2018/03/14 16:26:51 by gwood             #+#    #+#             */
+/*   Updated: 2018/03/14 17:06:42 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_putbits_fd(t_byte byte, int fd)
 {
-	while (*s)
-		write(1, s++, 1);
+	int i;
+
+	i = 7;
+	while (i >= 0)
+		ft_putchar_fd('0' + (byte >> i) % 2, fd);
 }

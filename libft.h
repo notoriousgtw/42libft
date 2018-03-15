@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/05 17:03:08 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/14 17:05:45 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,6 @@ int						ft_cntwrd(const char *s, char c);
 char					*ft_strcase(const char *s);
 char					*ft_strtoupper(const char *s);
 char					*ft_strtolower(const char *s);
+void					ft_putbits(t_byte byte);
+void					ft_putbits_fd(t_byte byte, int fd);
 #endif
