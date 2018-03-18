@@ -6,13 +6,13 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/17 16:39:09 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/17 19:17:47 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/17 20:19:40 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		is_valid(char c)
+static	int	is_valid(char c)
 {
 	char	*valid_chars;
 
@@ -23,7 +23,7 @@ int		is_valid(char c)
 	return (0);
 }
 
-int		get_val(char c)
+static	int	get_val(char c)
 {
 	char	*valid_chars;
 	char	*offset;
@@ -36,7 +36,7 @@ int		get_val(char c)
 	return (0);
 }
 
-int		numlen(const char *s)
+static	int	numlen(const char *s)
 {
 	int		i;
 
@@ -46,7 +46,7 @@ int		numlen(const char *s)
 	return (i);
 }
 
-int		ft_atoi_base(const char *s, int base)
+int			ft_atoi_base(const char *s, int base)
 {
 	int		i;
 	int		digits;

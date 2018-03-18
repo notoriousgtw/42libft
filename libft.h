@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/17 19:09:22 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/17 20:04:40 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,5 @@ void					ft_putbits(t_byte byte);
 void					ft_putbits_fd(t_byte byte, int fd);
 t_byte					ft_reversebits(t_byte byte);
 int						ft_atoi_base(const char *str, int base);
+char					*ft_itoa_base(int n, int base);
 #endif
