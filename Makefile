@@ -6,7 +6,7 @@
 #    By: gwood <gwood@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/20 15:11:46 by gwood             #+#    #+#              #
-#    Updated: 2018/03/14 16:37:59 by gwood            ###   ########.fr        #
+#    Updated: 2018/03/17 19:04:57 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,9 @@ FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 		 ft_strsplit ft_itoa ft_putchar ft_putstr ft_putendl ft_putnbr \
 		 ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 		 ft_lstnew ft_lstdelone ft_lstdel ft_lstadd ft_lstiter ft_lstmap \
-		 ft_iswspace ft_strndup ft_cntwrd ft_strcase ft_strtolower \
-		 ft_strtoupper ft_putbits ft_putbits_fd
+		 ft_power ft_iswspace ft_strndup ft_cntwrd ft_strcase ft_strtolower \
+		 ft_strtoupper ft_putbits ft_putbits_fd ft_reversebits \
+		 ft_atoi_base
 
 RM = rm -f
 

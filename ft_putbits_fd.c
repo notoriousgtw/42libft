@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 16:26:51 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/14 17:06:42 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/17 19:11:26 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ void	ft_putbits_fd(t_byte byte, int fd)
 
 	i = 7;
 	while (i >= 0)
-		ft_putchar_fd('0' + (byte >> i) % 2, fd);
+		ft_putchar_fd('0' + (byte >> i--) % 2, fd);
 }

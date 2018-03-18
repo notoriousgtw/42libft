@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/14 17:05:45 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/17 19:09:22 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void					ft_lstadd(t_list **alst, t_list *new);
 void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
+int						ft_power(int n, int power);
 int						ft_iswspace(int c);
 char					*ft_strndup(const char *s, size_t n);
 int						ft_cntwrd(const char *s, char c);
@@ -99,4 +100,6 @@ char					*ft_strtoupper(const char *s);
 char					*ft_strtolower(const char *s);
 void					ft_putbits(t_byte byte);
 void					ft_putbits_fd(t_byte byte, int fd);
+t_byte					ft_reversebits(t_byte byte);
+int						ft_atoi_base(const char *str, int base);
 #endif

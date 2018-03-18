@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/27 16:04:27 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/17 19:12:27 by gwood            ###   ########.fr       */
+/*   Created: 2018/03/17 18:55:28 by gwood             #+#    #+#             */
+/*   Updated: 2018/03/17 19:10:15 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(const char *s, int fd)
+int	ft_power(int n, int power)
 {
-	while (*s)
-		write(fd, s++, 1);
+	if (power < 0)
+		return (0);
+	if (!power)
+		return (1);
+	return (n * ft_power(n, power - 1));
 }
