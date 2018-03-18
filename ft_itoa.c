@@ -6,43 +6,43 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 15:33:49 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/17 19:58:52 by gwood            ###   ########.fr       */
+/*   Updated: 2018/03/17 20:32:56 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	neg(int *n, int *negative)
+static void	neg(long *n, int *negative, int *i)
 {
 	if (*n < 0)
 	{
 		*n *= -1;
 		*negative = 1;
+		*i += 1;
 	}
 }
 
 char		*ft_itoa(int n)
 {
+	long	num;
 	int		i;
 	char	*str;
-	int		tmp;
+	long	tmp;
 	int		negative;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	i = 2;
 	negative = 0;
-	tmp = n;
-	neg(&n, &negative);
+	num = (long)n;
+	tmp = num;
 	while (tmp /= 10)
 		i++;
-	i += negative;
+	neg(&num, &negative, &i);
 	if (!(str = ft_memalloc(i--)))
 		return (NULL);
 	while (i--)
 	{
-		str[i] = (n % 10) + '0';
-		n /= 10;
+		str[i] = (num % 10) + '0';
+		num /= 10;
 	}
 	if (negative)
 		str[0] = '-';
