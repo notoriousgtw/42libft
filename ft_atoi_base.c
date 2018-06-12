@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/17 16:39:09 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/17 23:01:19 by gwood            ###   ########.fr       */
+/*   Updated: 2018/05/29 17:38:40 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,7 @@ int			ft_atoi_base(const char *s, int base)
 	}
 	digits = numlen(s);
 	while (*s != '\0' && is_valid(*s))
-	{
-		digits--;
-		i += get_val(*s++) * ft_power(base, digits);
-	}
+		i += get_val(*s++) * ft_power(base, digits--);
 	if (isneg)
 		return (-i);
 	else

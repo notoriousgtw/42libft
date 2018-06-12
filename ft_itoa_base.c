@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/17 19:44:44 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/17 22:48:06 by gwood            ###   ########.fr       */
+/*   Updated: 2018/05/29 17:39:01 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,6 @@ char		*ft_itoa_base(int n, int base)
 	negative = 0;
 	i = get_digits(num, base);
 	neg(&num, &negative, &i);
-	// ft_putchar('\n');
-	// ft_putchar('\n');
-	// ft_putnbr(i);
-	// ft_putchar('\n');
-	// ft_putchar('\n');
 	if (!(str = ft_memalloc(i--)))
 		return (NULL);
 	while (i--)

@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/17 20:04:40 by gwood            ###   ########.fr       */
+/*   Updated: 2018/06/11 19:17:44 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,22 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
+
+# define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
+# define MAX(X, Y) (((X) > (Y)) ? (X) : (Y))
+# define BUFF_SIZE 16
+# define MAX_FD 1025
 
 typedef unsigned char	t_byte;
+
+typedef struct			s_gnl
+{
+	struct s_gnl	*next;
+	struct s_gnl	*prev;
+	char			*c;
+	int				fd;
+}						t_gnl;
 
 typedef struct			s_list
 {
@@ -103,4 +117,7 @@ void					ft_putbits_fd(t_byte byte, int fd);
 t_byte					ft_reversebits(t_byte byte);
 int						ft_atoi_base(const char *str, int base);
 char					*ft_itoa_base(int n, int base);
+
+char					*ft_strjoinfree(char *s1, char *s2, int f);
+int						ft_gnl(const int fd, char **line);
 #endif
