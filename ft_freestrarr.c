@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/17 12:43:44 by gwood             #+#    #+#             */
-/*   Updated: 2018/06/17 12:45:45 by gwood            ###   ########.fr       */
+/*   Updated: 2018/06/17 12:50:04 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,6 @@ void	ft_freestrarr(char **arr)
 		free(arr[i]);
 		arr[i] = NULL;
 	}
+	free(arr);
+	arr = NULL;
 }
