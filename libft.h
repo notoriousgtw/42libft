@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/06/11 19:38:45 by gwood            ###   ########.fr       */
+/*   Updated: 2018/06/17 02:30:00 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,4 +121,7 @@ char					*ft_itoa_base(int n, int base);
 
 char					*ft_strjoinfree(char *s1, char *s2, int f);
 int						ft_gnl(const int fd, char **line);
+void					ft_exit(void);
+void					ft_error(char *s);
+void					ft_error_unknown(void);
 #endif
