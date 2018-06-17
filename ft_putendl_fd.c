@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 16:00:13 by gwood             #+#    #+#             */
-/*   Updated: 2018/06/11 16:59:34 by gwood            ###   ########.fr       */
+/*   Updated: 2018/06/17 10:28:23 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putendl_fd(const char *s, int fd)
 {
 	if (!s)
-		return;
+		return ;
 	write(fd, s, ft_strlen((char *)s));
 	write(fd, "\n", 1);
 }
