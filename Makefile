@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gwood <gwood@student.42.fr>                +#+  +:+       +#+         #
+#    By: gwood <gwood@42.us.org>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/20 15:11:46 by gwood             #+#    #+#              #
-#    Updated: 2018/06/17 12:45:54 by gwood            ###   ########.fr        #
+#    Updated: 2018/07/24 19:27:50 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 		 ft_power ft_iswspace ft_strndup ft_cntwrd ft_strcase ft_strtolower \
 		 ft_strtoupper ft_putbits ft_putbits_fd ft_reversebits \
 		 ft_atoi_base ft_itoa_base ft_strjoinfree ft_gnl ft_lstapp ft_exit \
-		 ft_error ft_error_unknown ft_freestrarr
+		 ft_error ft_error_unknown ft_freestrarr ft_bswap
 
 RM = rm -f
 

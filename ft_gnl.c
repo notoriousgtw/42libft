@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_gnl.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 18:41:59 by gwood             #+#    #+#             */
-/*   Updated: 2018/06/19 17:11:54 by gwood            ###   ########.fr       */
+/*   Updated: 2018/07/24 19:27:02 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "gnl.h"
 
 void		ft_listaddb(t_gnl *alst, t_gnl *new)
 {
@@ -37,7 +38,6 @@ t_gnl		*ft_listnew(int fd)
 int			helper(char **line, t_gnl **buffsave)
 {
 	char			*e;
-	t_gnl			*tmp;
 
 	if ((*buffsave)->c == NULL)
 		return (-1);
@@ -55,7 +55,6 @@ int			helper(char **line, t_gnl **buffsave)
 		*(*buffsave)->c = '\0';
 		return (1);
 	}
-	tmp = NULL;
 	return (0);
 }
 

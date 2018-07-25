@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/06/17 12:46:58 by gwood            ###   ########.fr       */
+/*   Updated: 2018/07/24 19:25:45 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include <inttypes.h>
 
 # define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
 # define MAX(X, Y) (((X) > (Y)) ? (X) : (Y))
 # define BUFF_SIZE 16
 # define MAX_FD 1025
 
-typedef unsigned char	t_byte;
-
-typedef struct			s_gnl
-{
-	struct s_gnl	*next;
-	struct s_gnl	*prev;
-	char			*c;
-	int				fd;
-}						t_gnl;
+typedef uint8_t			t_byte;
 
 typedef struct			s_list
 {
@@ -118,11 +111,15 @@ void					ft_putbits_fd(t_byte byte, int fd);
 t_byte					ft_reversebits(t_byte byte);
 int						ft_atoi_base(const char *str, int base);
 char					*ft_itoa_base(int n, int base);
+char					*ft_uitoa_base(unsigned int n, int base);
 
 char					*ft_strjoinfree(char *s1, char *s2, int f);
-int						ft_gnl(const int fd, char **line);
 void					ft_exit(void);
 void					ft_error(char *s);
 void					ft_error_unknown(void);
 void					ft_freestrarr(char **arr);
+uint16_t 				ft_bswap16(uint16_t a);
+uint32_t 				ft_bswap32(uint32_t a);
+uint64_t 				ft_bswap64(uint64_t a);
+
 #endif
