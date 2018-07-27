@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 18:41:59 by gwood             #+#    #+#             */
-/*   Updated: 2018/07/24 19:27:02 by gwood            ###   ########.fr       */
+/*   Updated: 2018/07/27 10:04:15 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ int			ft_gnl(const int fd, char **line)
 		buf[check] = '\0';
 		buffsave->c = ft_strjoinfree(buffsave->c, buf, 1);
 		ft_bzero(buf, BUFF_SIZE + 1);
+		if (ft_strchr(buf, '\n'))
+			break ;
 	}
 	if (check < 0)
 		return (-1);
