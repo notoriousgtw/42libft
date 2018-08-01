@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/07/31 16:37:42 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/01 10:53:46 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ char					*ft_strtoupper(const char *s);
 char					*ft_strtolower(const char *s);
 void					ft_putbits(t_byte byte);
 void					ft_putbits_fd(t_byte byte, int fd);
-void    				ft_putbytes(const void *const data, size_t n);
+void    				ft_putbytes(const void *const data, size_t n, char delim);
 void    				ft_putbytes_fd(const void *const data, size_t n,
 							int fd);
 void    				ft_putbytes_array(const void *const array,
