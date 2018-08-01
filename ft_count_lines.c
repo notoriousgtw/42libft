@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cntwrd.c                                        :+:      :+:    :+:   */
+/*   ft_count_lines.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/03 18:44:45 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/03 18:51:26 by gwood            ###   ########.fr       */
+/*   Created: 2018/07/31 16:33:18 by gwood             #+#    #+#             */
+/*   Updated: 2018/07/31 16:38:03 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_cntwrd(const char *s, char c)
+size_t  ft_count_lines(char *str)
 {
-	unsigned int	i;
-	int				cnt;
+    size_t i;
 
-	i = 0;
-	cnt = 0;
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != 0)
-			cnt++;
-		while (s[i] && s[i] != c)
-			i++;
-	}
-	return (cnt);
+    i = 1;
+    while (*str++)
+        if (*str == '\n')
+            i++;
+    return (i);
 }

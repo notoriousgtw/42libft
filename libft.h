@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/07/24 19:25:45 by gwood            ###   ########.fr       */
+/*   Updated: 2018/07/31 16:37:42 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,16 @@
 # include <fcntl.h>
 # include <inttypes.h>
 
+
 # define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
 # define MAX(X, Y) (((X) > (Y)) ? (X) : (Y))
-# define BUFF_SIZE 16
-# define MAX_FD 1025
 
 typedef uint8_t			t_byte;
+typedef enum			e_bool
+{
+	false,
+	true
+}						t_bool;
 
 typedef struct			s_list
 {
@@ -102,12 +106,17 @@ t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int						ft_power(int n, int power);
 int						ft_iswspace(int c);
 char					*ft_strndup(const char *s, size_t n);
-int						ft_cntwrd(const char *s, char c);
+int						ft_count_words(const char *s, char c);
 char					*ft_strcase(const char *s);
 char					*ft_strtoupper(const char *s);
 char					*ft_strtolower(const char *s);
 void					ft_putbits(t_byte byte);
 void					ft_putbits_fd(t_byte byte, int fd);
+void    				ft_putbytes(const void *const data, size_t n);
+void    				ft_putbytes_fd(const void *const data, size_t n,
+							int fd);
+void    				ft_putbytes_array(const void *const array,
+							size_t array_length, size_t elem_size, char delim);
 t_byte					ft_reversebits(t_byte byte);
 int						ft_atoi_base(const char *str, int base);
 char					*ft_itoa_base(int n, int base);
@@ -118,8 +127,16 @@ void					ft_exit(void);
 void					ft_error(char *s);
 void					ft_error_unknown(void);
 void					ft_freestrarr(char **arr);
-uint16_t 				ft_bswap16(uint16_t a);
-uint32_t 				ft_bswap32(uint32_t a);
-uint64_t 				ft_bswap64(uint64_t a);
+void					*ft_vargs_to_array(void *last_arg, size_t arg_count,
+							size_t arg_size);
+uint16_t 				ft_bswap16(uint16_t n);
+uint32_t 				ft_bswap32(uint32_t n);
+uint64_t 				ft_bswap64(uint64_t n);
+void                	*ft_bswap_array(const void *const array,
+                        	size_t array_length, size_t elem_size);
+size_t  				ft_sizeof_ndarray(size_t elem_size, size_t ndims,
+							size_t *dims);
+char					*ft_strjoin_ml(char *s1, const char *s2);
+size_t					ft_count_lines(char *str);
 
 #endif

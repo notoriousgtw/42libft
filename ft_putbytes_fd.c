@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bswap.c                                         :+:      :+:    :+:   */
+/*   ft_putbytes_fd.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/30 10:17:24 by gwood             #+#    #+#             */
-/*   Updated: 2018/07/31 14:57:03 by gwood            ###   ########.fr       */
+/*   Created: 2018/07/30 14:49:49 by gwood             #+#    #+#             */
+/*   Updated: 2018/07/30 15:01:41 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "bswap_utils.h"
-#include <inttypes.h>
 
-uint16_t ft_bswap16(uint16_t n)
+void    ft_putbytes_fd(const void *const data, size_t n, int fd)
 {
-    ft_bswap16_v(&n);
-    return (n);
-}
+    size_t i;
 
-uint32_t ft_bswap32(uint32_t n)
-{
-    ft_bswap32_v(&n);
-    return (n);
-}
-
-uint64_t ft_bswap64(uint64_t n)
-{
-    ft_bswap64_v(&n);
-    return (n);
+    i = 0;
+    while (i < n)
+        ft_putbits_fd(((t_byte *)data)[i++], fd);
 }

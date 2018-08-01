@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bswap.c                                         :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/30 10:17:24 by gwood             #+#    #+#             */
-/*   Updated: 2018/07/31 14:57:03 by gwood            ###   ########.fr       */
+/*   Created: 2018/03/03 18:44:45 by gwood             #+#    #+#             */
+/*   Updated: 2018/07/31 16:07:12 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "bswap_utils.h"
-#include <inttypes.h>
 
-uint16_t ft_bswap16(uint16_t n)
+int		ft_count_words(const char *s, char c)
 {
-    ft_bswap16_v(&n);
-    return (n);
-}
+	unsigned int	i;
+	int				cnt;
 
-uint32_t ft_bswap32(uint32_t n)
-{
-    ft_bswap32_v(&n);
-    return (n);
-}
-
-uint64_t ft_bswap64(uint64_t n)
-{
-    ft_bswap64_v(&n);
-    return (n);
+	i = 0;
+	cnt = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i] != 0)
+			cnt++;
+		while (s[i] && s[i] != c)
+			i++;
+	}
+	return (cnt);
 }

@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bswap.c                                         :+:      :+:    :+:   */
+/*   ft_sizeof_ndarray.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/30 10:17:24 by gwood             #+#    #+#             */
-/*   Updated: 2018/07/31 14:57:03 by gwood            ###   ########.fr       */
+/*   Created: 2018/07/31 12:21:41 by gwood             #+#    #+#             */
+/*   Updated: 2018/07/31 14:09:32 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "bswap_utils.h"
-#include <inttypes.h>
 
-uint16_t ft_bswap16(uint16_t n)
+size_t  ft_sizeof_ndarray(size_t elem_size, size_t ndims, size_t *dims)
 {
-    ft_bswap16_v(&n);
-    return (n);
-}
+    size_t  i;
+    size_t  arr_size;
 
-uint32_t ft_bswap32(uint32_t n)
-{
-    ft_bswap32_v(&n);
-    return (n);
-}
-
-uint64_t ft_bswap64(uint64_t n)
-{
-    ft_bswap64_v(&n);
-    return (n);
+    if (dims == NULL)
+        return (0);
+    arr_size = elem_size;
+    i = 0;
+    while (i < ndims)
+        arr_size *= dims[i++];
+    return (arr_size);
 }

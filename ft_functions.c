@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getopt.h                                           :+:      :+:    :+:   */
+/*   ft_functions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/20 16:04:12 by gwood             #+#    #+#             */
-/*   Updated: 2018/07/20 16:07:09 by gwood            ###   ########.fr       */
+/*   Created: 2018/07/30 13:15:36 by gwood             #+#    #+#             */
+/*   Updated: 2018/07/30 13:32:45 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GETOPT_H
-# define GETOPT_H
+#include "libft.h"
 
-extern char *optarg;
-extern int  optind, opterr, optopt;
+t_fnc_tab   *ft_init_fnc_tab(char **names, void *funcs)
+{
+    size_t      count;
+    t_fnc_tab   *ret;
 
-int     ft_getopt(int argc, const char *argv[], const char *optstring);
+    ret = (t_fnc_tab *)ft_memalloc(sizeof(t_fnc_tab));
+    ret->fptr_size = sizeof(*funcs)
+    return (ret);
+}
 
-#endif
+void        ft_clean_fnc_tab(t_fnc_tab *tab)
+{
+    ft_freestrarr(tab->names);
+
+}

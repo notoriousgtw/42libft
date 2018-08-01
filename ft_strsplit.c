@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwood <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 17:07:40 by gwood             #+#    #+#             */
-/*   Updated: 2018/03/03 18:50:16 by gwood            ###   ########.fr       */
+/*   Updated: 2018/07/31 15:42:17 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char		**ft_strsplit(const char *s, char c)
 	k = 0;
 	if (!s)
 		return (NULL);
-	if (!(ret = (char **)malloc(sizeof(char *) * (ft_cntwrd(s, c)) + 1)))
+	if (!(ret = (char **)malloc(sizeof(char *) * (ft_count_words(s, c)) + 1)))
 		return (NULL);
 	while (s[i])
 	{
