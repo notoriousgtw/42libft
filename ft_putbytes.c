@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 14:49:49 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/01 10:53:36 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/02 10:28:56 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void    ft_putbytes(const void *const data, size_t n, char delim)
     i = 0;
     while (i < n)
     {
-        if (i > 0 && delim != NULL)
+        if (i > 0 && delim != 0)
             ft_putchar(delim);
         ft_putbits(((t_byte *)data)[i++]);
     }
@@ -34,9 +34,9 @@ void    ft_putbytes_array(const void *const array, size_t array_length,
     i = 0;
     while (i < array_length)
     {
-        if (i > 0 && delim != NULL)
+        if (i > 0 && delim != 0)
             ft_putchar(delim);
-        ft_putbytes(array + (i * elem_size), elem_size);
+        ft_putbytes(array + (i * elem_size), elem_size, ' ');
         i++;
     }
 }
