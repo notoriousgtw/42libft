@@ -6,14 +6,14 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/17 19:44:44 by gwood             #+#    #+#             */
-/*   Updated: 2018/07/22 18:15:36 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/07 12:13:49 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <inttypes.h>
 
-static int	get_digits(u_int32_t num, int base)
+static int	get_digits(uint32_t num, int base)
 {
 	int i;
 	int j;
@@ -30,7 +30,7 @@ static int	get_digits(u_int32_t num, int base)
 	return (i);
 }
 
-char		*ft_uitoa_base(u_int32_t n, int base)
+char		*ft_uitoa_base(uint32_t n, int base)
 {
 	int		i;
 	char	*str;
