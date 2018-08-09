@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/02 12:41:22 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/08 16:17:00 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void					ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void					ft_lstadd(t_list **alst, t_list *new);
 void					ft_lstapp(t_list **alst, t_list *new);
 void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+void					ft_lstiter_data(t_list *lst, void (*f)(t_list *elem, void *), void *data);
 t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int						ft_power(int n, int power);
