@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/17 02:26:57 by gwood             #+#    #+#             */
-/*   Updated: 2018/06/17 02:27:47 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/09 13:33:02 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,11 @@
 void	ft_error(char *s)
 {
 	ft_putendl_fd(s, 2);
-	ft_exit();
+	exit(EXIT_FAILURE);
+}
+
+void	ft_error_free(char *s, t_free_fnc free_data, void *data)
+{
+	ft_putendl_fd(s, 2);
+	ft_exit(EXIT_FAILURE, free_data, data);
 }

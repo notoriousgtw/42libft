@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/17 19:44:44 by gwood             #+#    #+#             */
-/*   Updated: 2018/05/29 17:39:01 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/09 12:50:37 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <inttypes.h>
 
-static int	get_digits(long num, int base)
+static int	get_digits(uint32_t num, int base)
 {
 	int i;
 	int j;
@@ -29,39 +30,19 @@ static int	get_digits(long num, int base)
 	return (i);
 }
 
-static void	neg(long *n, int *negative, int *i)
+char		*ft_uitoa(uint32_t n, char * str, int base)
 {
-	if (*n < 0)
-	{
-		*n *= -1;
-		*negative = 1;
-		*i += 1;
-	}
-}
-
-char		*ft_itoa_base(int n, int base)
-{
-	long	num;
 	int		i;
-	char	*str;
-	int		negative;
 	char	*valid_chars;
 
-	num = (long)n;
 	valid_chars = "0123456789abcdef";
 	i = 2;
-	negative = 0;
-	i = get_digits(num, base);
-	neg(&num, &negative, &i);
-	if (!(str = ft_memalloc(i--)))
-		return (NULL);
+	i = get_digits(n, base);
 	while (i--)
 	{
-		str[i] = valid_chars[num % base];
-		num /= base;
+		str[i] = valid_chars[n % base];
+		n /= base;
 	}
-	if (negative)
-		str[++i] = '-';
 	while (base == 2 && str[i] != '1')
 		str[i++] = '0';
 	return (str);

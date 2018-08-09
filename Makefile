@@ -6,7 +6,7 @@
 #    By: gwood <gwood@42.us.org>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/20 15:11:46 by gwood             #+#    #+#              #
-#    Updated: 2018/07/31 16:36:50 by gwood            ###   ########.fr        #
+#    Updated: 2018/08/09 12:51:01 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,8 @@ FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 		 ft_lstnew ft_lstdelone ft_lstdel ft_lstadd ft_lstiter ft_lstmap \
 		 ft_power ft_iswspace ft_strndup ft_count_words ft_strcase \
 		 ft_strtolower ft_strtoupper ft_putbits ft_putbits_fd ft_reversebits \
-		 ft_atoi_base ft_itoa_base ft_strjoinfree ft_gnl ft_lstapp ft_exit \
-		 ft_error ft_error_unknown ft_freestrarr ft_uitoa_base ft_bswap_array \
+		 ft_atoi_base ft_strjoinfree ft_gnl ft_lstapp ft_exit \
+		 ft_error ft_error_unknown ft_freestrarr ft_uitoa ft_bswap_array \
 		 ft_bswap_utils ft_putbytes ft_putbytes_fd ft_sizeof_ndarray ft_bswap \
 		 ft_strjoin_ml ft_count_lines
 
