@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/09 13:43:28 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/09 18:44:00 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,8 +120,9 @@ char				*ft_strjoinfree(char *s1, char *s2, int f);
 void				ft_exit(int status, t_free_fnc free_data, void *data);
 void				ft_error(char *s);
 void				ft_error_free(char *s, t_free_fnc free_data, void *data);
-void				ft_error_unknown(void);
-void				ft_error_unknown_free(t_free_fnc free_data, void *data);
+void				ft_error_unknown(char *s);
+void				ft_error_unknown_free(char *s, t_free_fnc free_data,
+						void *data);
 void				ft_freestrarr(char **arr);
 void				*ft_vargs_to_array(void *last_arg, size_t arg_count,
 						size_t arg_size);
