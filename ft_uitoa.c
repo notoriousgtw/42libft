@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/17 19:44:44 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/09 12:50:37 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/10 10:04:51 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,17 @@ static int	get_digits(uint32_t num, int base)
 	return (i);
 }
 
-char		*ft_uitoa(uint32_t n, char * str, int base)
+char		*ft_uitoa(uint32_t n, int base)
 {
 	int		i;
+	char	*str;
 	char	*valid_chars;
 
 	valid_chars = "0123456789abcdef";
 	i = 2;
 	i = get_digits(n, base);
+	if (!(str = ft_memalloc(i--)))
+		return (NULL);
 	while (i--)
 	{
 		str[i] = valid_chars[n % base];

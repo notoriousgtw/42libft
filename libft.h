@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/09 18:44:00 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/10 10:08:42 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char				*ft_strsub(const char *s, unsigned int start, size_t len);
 char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_strtrim(const char *s);
 char				**ft_strsplit(const char *s, char c);
-char				*ft_itoa(int n, char * str, int base);
+char				*ft_itoa(int32_t n, int base);
 void				ft_putchar(char c);
 void				ft_putstr(const char *s);
 void				ft_putendl(const char *s);
@@ -115,7 +115,7 @@ void    			ft_putbytes_array(const void *const array,
 						size_t array_length, size_t elem_size, char *delims);
 t_byte				ft_reversebits(t_byte byte);
 int					ft_atoi_base(const char *str, int base);
-char				*ft_uitoa(uint32_t n, char * str, int base);
+char				*ft_uitoa(uint32_t n, int base);
 char				*ft_strjoinfree(char *s1, char *s2, int f);
 void				ft_exit(int status, t_free_fnc free_data, void *data);
 void				ft_error(char *s);
