@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
+/*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/10 10:08:42 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/13 12:28:07 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,9 @@ char				*ft_strtoupper(const char *s);
 char				*ft_strtolower(const char *s);
 void				ft_putbits(t_byte byte);
 void				ft_putbits_fd(t_byte byte, int fd);
-void    			ft_putbytes(const void *const data, size_t n, char delim);
-void    			ft_putbytes_fd(const void *const data, size_t n, int fd);
-void    			ft_putbytes_array(const void *const array,
+void				ft_putbytes(const void *const data, size_t n, char delim);
+void				ft_putbytes_fd(const void *const data, size_t n, int fd);
+void				ft_putbytes_array(const void *const array,
 						size_t array_length, size_t elem_size, char *delims);
 t_byte				ft_reversebits(t_byte byte);
 int					ft_atoi_base(const char *str, int base);
@@ -126,12 +126,12 @@ void				ft_error_unknown_free(char *s, t_free_fnc free_data,
 void				ft_freestrarr(char **arr);
 void				*ft_vargs_to_array(void *last_arg, size_t arg_count,
 						size_t arg_size);
-uint16_t 			ft_bswap16(uint16_t n);
-uint32_t 			ft_bswap32(uint32_t n);
-uint64_t 			ft_bswap64(uint64_t n);
-void                *ft_bswap_array(const void *const array,
-                    	size_t array_length, size_t elem_size);
-size_t  			ft_sizeof_ndarray(size_t elem_size, size_t ndims,
+uint16_t			ft_bswap16(uint16_t n);
+uint32_t			ft_bswap32(uint32_t n);
+uint64_t			ft_bswap64(uint64_t n);
+void				*ft_bswap_array(const void *const array,
+						size_t array_length, size_t elem_size);
+size_t				ft_sizeof_ndarray(size_t elem_size, size_t ndims,
 						size_t *dims);
 char				*ft_strjoin_ml(char *s1, const char *s2);
 size_t				ft_count_lines(char *str);
