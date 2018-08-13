@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/10 10:08:42 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/10 15:13:11 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef void		(*t_lstdel_fnc)(void *content, size_t content_size);
 typedef void		(*t_free_fnc)(void *data);
 
 typedef uint8_t		t_byte;
+
 typedef enum		e_bool
 {
 	false,
@@ -135,5 +136,7 @@ size_t  			ft_sizeof_ndarray(size_t elem_size, size_t ndims,
 						size_t *dims);
 char				*ft_strjoin_ml(char *s1, const char *s2);
 size_t				ft_count_lines(char *str);
+char    			*ft_rndstr(size_t size);
+int32_t				ft_rndi32();
 
 #endif

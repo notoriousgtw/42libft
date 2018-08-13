@@ -6,12 +6,12 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 18:41:59 by gwood             #+#    #+#             */
-/*   Updated: 2018/07/27 10:04:15 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/10 14:08:23 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "gnl.h"
+#include "ft_gnl.h"
 
 void		ft_listaddb(t_gnl *alst, t_gnl *new)
 {

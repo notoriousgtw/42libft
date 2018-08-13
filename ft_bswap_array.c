@@ -6,12 +6,12 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 12:22:26 by gwood             #+#    #+#             */
-/*   Updated: 2018/07/31 15:20:06 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/10 14:08:38 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "bswap_utils.h"
+#include "ft_bswap_utils.h"
 #include <inttypes.h>
 
 static t_bswap      *init(const void *const array, size_t array_size,
