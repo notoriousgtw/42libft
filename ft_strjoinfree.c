@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 14:03:14 by gwood             #+#    #+#             */
-/*   Updated: 2018/05/29 14:03:33 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/13 10:54:25 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,10 @@ char	*ft_strjoinfree(char *s1, char *s2, int f)
 		ft_strdel(&s1);
 	else if (f == 2)
 		ft_strdel(&s2);
+	else if (f == 3)
+	{
+		ft_strdel(&s1);
+		ft_strdel(&s2);
+	}
 	return (s3);
 }
