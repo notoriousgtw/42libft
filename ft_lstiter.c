@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
+/*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 17:49:28 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/08 16:17:39 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/13 12:21:32 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 	f(lst);
 }
 
-void	ft_lstiter_data(t_list *lst, void (*f)(t_list *elem, void *), void *data)
+void	ft_lstiter_data(t_list *lst, void (*f)(t_list *elem, void *),
+							void *data)
 {
 	if (!lst)
 		return ;

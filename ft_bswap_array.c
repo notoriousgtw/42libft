@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 12:22:26 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/15 12:50:27 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/15 12:54:14 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ static t_bswap		*init(const void *const array, size_t array_size,
 static t_bswap_fnc	get_func(size_t elem_size)
 {
 	if (elem_size == 2)
-		return &ft_bswap16_v;
+		return (&ft_bswap16_v);
 	else if (elem_size == 4)
-		return &ft_bswap32_v;
+		return (&ft_bswap32_v);
 	else if (elem_size == 8)
-		return &ft_bswap64_v;
+		return (&ft_bswap64_v);
 	else
 		return (NULL);
 }
