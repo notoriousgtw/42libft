@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sizeof_ndarray.c                                :+:      :+:    :+:   */
+/*   ft_getopts.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 12:21:41 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/15 12:50:27 by gwood            ###   ########.fr       */
+/*   Created: 2018/08/15 12:31:17 by gwood             #+#    #+#             */
+/*   Updated: 2018/08/15 12:41:35 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FT_GETOPTS_H
+# define FT_GETOPTS_H
+
 #include "libft.h"
 
-size_t	ft_sizeof_ndarray(size_t elem_size, size_t ndims, size_t *dims)
+typedef struct	s_opts
 {
-	size_t	i;
-	size_t	arr_size;
+	char			opt;
+	char			*arg;
+	struct s_opts	*next;
+}				t_opts;
 
-	if (dims == NULL)
-		return (0);
-	arr_size = elem_size;
-	i = 0;
-	while (i < ndims)
-		arr_size *= dims[i++];
-	return (arr_size);
-}
+t_opts			*ft_getopts(int argc, char *argv[], char *optstr);
+void			ft_freeopts(t_opts **opts);
+
+#endif

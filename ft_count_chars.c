@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sizeof_ndarray.c                                :+:      :+:    :+:   */
+/*   ft_count_chars.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 12:21:41 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/15 12:50:27 by gwood            ###   ########.fr       */
+/*   Created: 2018/08/13 17:47:39 by gwood             #+#    #+#             */
+/*   Updated: 2018/08/13 17:53:49 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_sizeof_ndarray(size_t elem_size, size_t ndims, size_t *dims)
+size_t	ft_count_chars(char *str, char c)
 {
-	size_t	i;
-	size_t	arr_size;
 
-	if (dims == NULL)
-		return (0);
-	arr_size = elem_size;
+	int i;
+
 	i = 0;
-	while (i < ndims)
-		arr_size *= dims[i++];
-	return (arr_size);
+	while (*str)
+		if (*str++ == c)
+			++i;
+	return (i);
 }

@@ -6,19 +6,19 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 16:33:18 by gwood             #+#    #+#             */
-/*   Updated: 2018/07/31 16:38:03 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/15 12:50:27 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_count_lines(char *str)
+size_t	ft_count_lines(char *str)
 {
-    size_t i;
+	size_t i;
 
-    i = 1;
-    while (*str++)
-        if (*str == '\n')
-            i++;
-    return (i);
+	i = 1;
+	while (*str++)
+		if (*str == '\n')
+			i++;
+	return (i);
 }
