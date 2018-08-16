@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 12:30:27 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/16 14:27:14 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/16 14:36:24 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static t_opts	*newopt(char opt, char *arg)
 		return (NULL);
 	ret->opt = opt;
 	if (arg)
-		ret->arg = ft_strdup(arg);
+		ret->arg = arg;
 	else
 		ret->arg = NULL;
 	ret->next = NULL;
@@ -106,7 +106,7 @@ void			ft_freeopts(t_opts **opts)
 	while (lst != NULL)
 	{
 		tmp = lst->next;
-		ft_strdel(&lst->arg);
+		// ft_strdel(&lst->arg);
 		free(lst);
 		lst = tmp;
 	}
