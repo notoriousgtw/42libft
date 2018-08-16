@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_getopts.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 12:30:27 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/16 14:36:24 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/16 14:43:16 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,6 @@ void			ft_freeopts(t_opts **opts)
 	while (lst != NULL)
 	{
 		tmp = lst->next;
-		// ft_strdel(&lst->arg);
 		free(lst);
 		lst = tmp;
 	}
