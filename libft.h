@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/15 12:55:52 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/16 13:06:53 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ void				ft_putbytes_array(const void *const array,
 t_byte				ft_reversebits(t_byte byte);
 int					ft_atoi_base(const char *str, int base);
 char				*ft_uitoa(uint32_t n, int base);
+char				*ft_ultoa(uint64_t n, int base);
 char				*ft_strjoinfree(char *s1, char *s2, int f);
 void				ft_exit(int status, t_free_fnc free_data, void *data);
 void				ft_error(char *s);

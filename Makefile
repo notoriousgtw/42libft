@@ -6,7 +6,7 @@
 #    By: gwood <gwood@42.us.org>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/20 15:11:46 by gwood             #+#    #+#              #
-#    Updated: 2018/08/15 18:21:03 by gwood            ###   ########.fr        #
+#    Updated: 2018/08/16 11:32:42 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 		 ft_error ft_error_unknown ft_freestrarr ft_uitoa ft_bswap_array \
 		 ft_bswap_utils ft_putbytes ft_putbytes_fd ft_sizeof_ndarray ft_bswap \
 		 ft_strjoin_ml ft_count_lines ft_count_chars ft_getopts \
+		 ft_ultoa
 
 RM = rm -f
 
