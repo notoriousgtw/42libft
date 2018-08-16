@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putbytes.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
+/*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 14:49:49 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/15 12:54:52 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/16 14:33:44 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_putbytes(const void *const data, size_t n, char delim)
 {
