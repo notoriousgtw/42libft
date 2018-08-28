@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_ultoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/17 19:44:44 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/28 14:46:43 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/28 14:54:32 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <inttypes.h>
 
-static int	get_digits(long num, int base)
+static int	get_digits(uint64_t num, int base)
 {
 	int i;
 	int j;
@@ -29,39 +30,22 @@ static int	get_digits(long num, int base)
 	return (i);
 }
 
-static void	neg(int64_t *n, t_bool *negative, int *i)
+char		*ft_ultoa(uint64_t n, int base)
 {
-	if (*n < 0)
-	{
-		*n *= -1;
-		*negative = true;
-		*i += 1;
-	}
-}
-
-char		*ft_itoa(int32_t n, int base)
-{
-	int64_t	num;
 	int		i;
 	char	*str;
-	t_bool	negative;
 	char	*valid_chars;
 
-	num = (long)n;
 	valid_chars = "0123456789abcdef";
 	i = 2;
-	negative = false;
-	i = get_digits(num, base);
-	neg(&num, &negative, &i);
+	i = get_digits(n, base);
 	if (!(str = ft_memalloc(i--)))
 		return (NULL);
 	while (i--)
 	{
-		str[i] = valid_chars[num % base];
-		num /= base;
+		str[i] = valid_chars[n % base];
+		n /= base;
 	}
-	if (negative)
-		str[++i] = '-';
 	while (base == 2 && str[i] != '1')
 		str[i++] = '0';
 	return (str);

@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bswap.c                                         :+:      :+:    :+:   */
+/*   ft_bitstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/30 10:17:24 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/28 14:48:29 by gwood            ###   ########.fr       */
+/*   Created: 2018/08/28 13:58:15 by gwood             #+#    #+#             */
+/*   Updated: 2018/08/28 14:28:01 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_bswap_utils.h"
-#include <inttypes.h>
+#include "ft_bit_utils.h"
 
-uint16_t	ft_bswap16(uint16_t n)
+uint64_t	ft_getbitstr(uint64_t x, uint8_t b, uint8_t n)
 {
-	ft_bswap16_v(&n);
-	return (n);
-}
+	uint64_t y;
+	y = (x >> b);
+	y = (y << (64 - n)) >> (64 - n);
 
-uint32_t	ft_bswap32(uint32_t n)
-{
-	ft_bswap32_v(&n);
-	return (n);
-}
-
-uint64_t	ft_bswap64(uint64_t n)
-{
-	ft_bswap64_v(&n);
-	return (n);
+	return (y);
 }
