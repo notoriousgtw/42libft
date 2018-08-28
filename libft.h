@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/09 18:44:00 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/10 15:13:11 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef void		(*t_lstdel_fnc)(void *content, size_t content_size);
 typedef void		(*t_free_fnc)(void *data);
 
 typedef uint8_t		t_byte;
+
 typedef enum		e_bool
 {
 	false,
@@ -82,7 +83,7 @@ char				*ft_strsub(const char *s, unsigned int start, size_t len);
 char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_strtrim(const char *s);
 char				**ft_strsplit(const char *s, char c);
-char				*ft_itoa(int n, char * str, int base);
+char				*ft_itoa(int32_t n, int base);
 void				ft_putchar(char c);
 void				ft_putstr(const char *s);
 void				ft_putendl(const char *s);
@@ -115,7 +116,7 @@ void    			ft_putbytes_array(const void *const array,
 						size_t array_length, size_t elem_size, char *delims);
 t_byte				ft_reversebits(t_byte byte);
 int					ft_atoi_base(const char *str, int base);
-char				*ft_uitoa(uint32_t n, char * str, int base);
+char				*ft_uitoa(uint32_t n, int base);
 char				*ft_strjoinfree(char *s1, char *s2, int f);
 void				ft_exit(int status, t_free_fnc free_data, void *data);
 void				ft_error(char *s);
@@ -135,5 +136,7 @@ size_t  			ft_sizeof_ndarray(size_t elem_size, size_t ndims,
 						size_t *dims);
 char				*ft_strjoin_ml(char *s1, const char *s2);
 size_t				ft_count_lines(char *str);
+char    			*ft_rndstr(size_t size);
+int32_t				ft_rndi32();
 
 #endif
