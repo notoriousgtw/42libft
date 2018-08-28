@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 12:30:27 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/15 12:43:24 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/16 14:43:16 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ static t_opts	*newopt(char opt, char *arg)
 		return (NULL);
 	ret->opt = opt;
 	if (arg)
-		ret->arg = ft_strdup(arg);
+		ret->arg = arg;
 	else
 		ret->arg = NULL;
 	ret->next = NULL;
 	return (ret);
 }
 
-static void	addopt(t_opts **opts, char opt, char *arg)
+static void		addopt(t_opts **opts, char opt, char *arg)
 {
 	t_opts *new_opt;
 
@@ -41,10 +41,11 @@ static void	addopt(t_opts **opts, char opt, char *arg)
 	}
 }
 
-char	checkopts(char *argv[], char *optstr, char **optarg, t_bool *end)
+static char		checkopts(char *argv[], char *optstr, char **optarg,
+					t_bool *end)
 {
-	int	 i;
-	int	 optcnt;
+	int	i;
+	int	optcnt;
 
 	optcnt = ft_strlen(optstr) - ft_count_chars(optstr, ';') -
 		ft_count_chars(optstr, ':');
@@ -67,9 +68,9 @@ char	checkopts(char *argv[], char *optstr, char **optarg, t_bool *end)
 	return (0);
 }
 
-t_opts	*ft_getopts(int argc, char *argv[], char *optstr)
+t_opts			*ft_getopts(int argc, char *argv[], char *optstr)
 {
-	int	 i;
+	int		i;
 	t_opts	*opts;
 	t_bool	end;
 	char	opt;
@@ -86,7 +87,7 @@ t_opts	*ft_getopts(int argc, char *argv[], char *optstr)
 		if (ft_strncmp(argv[i], "-", 1))
 		{
 			i++;
-			break;
+			break ;
 		}
 		opt = checkopts(&(argv[i]), optstr, &optarg, &end);
 		if (opt)
@@ -96,7 +97,7 @@ t_opts	*ft_getopts(int argc, char *argv[], char *optstr)
 	return (opts);
 }
 
-void	ft_freeopts(t_opts **opts)
+void			ft_freeopts(t_opts **opts)
 {
 	t_opts *tmp;
 	t_opts *lst;
@@ -105,7 +106,6 @@ void	ft_freeopts(t_opts **opts)
 	while (lst != NULL)
 	{
 		tmp = lst->next;
-		ft_strdel(&lst->arg);
 		free(lst);
 		lst = tmp;
 	}
