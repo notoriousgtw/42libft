@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/28 14:56:17 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/29 11:48:09 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,5 +140,6 @@ size_t				ft_count_lines(char *str);
 size_t				ft_count_chars(char *str, char c);
 char    			*ft_rndstr(size_t size);
 char				*ft_ultoa(uint64_t n, int base);
+void				ft_putbool(t_bool b);
 
 #endif
