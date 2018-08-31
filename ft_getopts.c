@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 12:30:27 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/16 14:43:16 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/30 15:42:38 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,23 @@ static t_opts	*newopt(char opt, char *arg)
 	return (ret);
 }
 
-static void		addopt(t_opts **opts, char opt, char *arg)
+static void		addopt(t_opts **opts, char opt, char *arg, int *i)
 {
 	t_opts *new_opt;
 
 	if (*opts == NULL)
+	{
 		*opts = newopt(opt, arg);
+		if (arg != NULL)
+			(*i)++;
+	}
 	else
 	{
 		new_opt = newopt(opt, arg);
 		new_opt->next = *opts;
 		*opts = new_opt;
+		if (arg != NULL)
+			(*i)++;
 	}
 }
 
@@ -47,8 +53,7 @@ static char		checkopts(char *argv[], char *optstr, char **optarg,
 	int	i;
 	int	optcnt;
 
-	optcnt = ft_strlen(optstr) - ft_count_chars(optstr, ';') -
-		ft_count_chars(optstr, ':');
+	optcnt = ft_strlen(optstr);
 	i = 0;
 	while (i < optcnt)
 	{
@@ -80,10 +85,10 @@ t_opts			*ft_getopts(int argc, char *argv[], char *optstr)
 		return (NULL);
 	end = false;
 	opts = NULL;
-	optarg = NULL;
 	i = 1;
 	while (i < argc)
 	{
+		optarg = NULL;
 		if (ft_strncmp(argv[i], "-", 1))
 		{
 			i++;
@@ -91,7 +96,7 @@ t_opts			*ft_getopts(int argc, char *argv[], char *optstr)
 		}
 		opt = checkopts(&(argv[i]), optstr, &optarg, &end);
 		if (opt)
-			addopt(&opts, opt, optarg);
+			addopt(&opts, opt, optarg, &i);
 		i++;
 	}
 	return (opts);
