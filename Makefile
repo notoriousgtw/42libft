@@ -6,11 +6,12 @@
 #    By: gwood <gwood@42.us.org>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/30 14:30:20 by mhurd             #+#    #+#              #
-#    Updated: 2018/10/02 19:45:23 by gwood            ###   ########.fr        #
+#    Updated: 2018/10/02 20:09:19 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libft.a
+LIBNAME = $(subst .a,,$(NAME))
 
 FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 		 ft_memcmp ft_strlen ft_strdup ft_strcpy ft_strncpy ft_strcat \
@@ -46,16 +47,16 @@ obj:
 	@mkdir -p $(OBJDIR)
 
 $(OBJDIR)%.o:$(SRCDIR)%.c
-	@echo libft: Compiling $@
+	@echo $(LIBNAME): Compiling $@
 	@$(CC) $(CFLAGS) -I $(INCDIR) -o $@ -c $<
 
 $(NAME): $(OBJ)
-	@echo libft: Compiling $(NAME)
+	@echo $(LIBNAME): Compiling $(NAME)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
 clean:
-	@echo libft: Removing objects folder
+	@echo $(LIBNAME): Removing objects folder
 	@rm -rf $(OBJDIR)
 
 fclean: clean
