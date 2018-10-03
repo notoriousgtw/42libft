@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 13:54:20 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/29 11:48:09 by gwood            ###   ########.fr       */
+/*   Updated: 2018/08/31 13:57:40 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define MAX(X, Y) (((X) > (Y)) ? (X) : (Y))
 
 typedef void		(*t_lstdel_fnc)(void *content, size_t content_size);
+typedef void		*(*t_init_fnc)(void *data);
 typedef void		(*t_free_fnc)(void *data);
 
 typedef uint8_t		t_byte;
@@ -31,13 +32,6 @@ typedef enum		e_bool
 	false,
 	true
 }					t_bool;
-
-typedef struct		s_list
-{
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-}					t_list;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *b, size_t n);
@@ -92,15 +86,7 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(const char *s, int fd);
 void				ft_putendl_fd(const char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-t_list				*ft_lstnew(const void *content, size_t content_size);
-void				ft_lstdelone(t_list **alst, t_lstdel_fnc del);
-void				ft_lstdel(t_list **alst, t_lstdel_fnc del);
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstapp(t_list **alst, t_list *new);
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-void				ft_lstiter_data(t_list *lst,
-						void (*f)(t_list *elem, void *), void *data);
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
 int					ft_power(int n, int power);
 int					ft_iswspace(int c);
 char				*ft_strndup(const char *s, size_t n);

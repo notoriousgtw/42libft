@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gwood <gwood@42.us.org>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/02/20 15:11:46 by gwood             #+#    #+#              #
-#    Updated: 2018/08/30 19:23:03 by gwood            ###   ########.fr        #
+#    Created: 2016/10/30 14:30:20 by mhurd             #+#    #+#              #
+#    Updated: 2018/10/02 19:45:23 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME	= libft.a
 
 FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 		 ft_memcmp ft_strlen ft_strdup ft_strcpy ft_strncpy ft_strcat \
@@ -21,34 +21,45 @@ FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 		 ft_strmapi ft_strequ ft_strnequ ft_strsub ft_strjoin ft_strtrim \
 		 ft_strsplit ft_itoa ft_putchar ft_putstr ft_putendl ft_putnbr \
 		 ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
-		 ft_lstnew ft_lstdelone ft_lstdel ft_lstadd ft_lstiter ft_lstmap \
 		 ft_power ft_iswspace ft_strndup ft_count_words ft_strcase \
 		 ft_strtolower ft_strtoupper ft_putbits ft_putbits_fd ft_reversebits \
-		 ft_atoi_base ft_strjoinfree ft_gnl ft_lstapp ft_exit \
+		 ft_atoi_base ft_strjoinfree ft_gnl ft_exit \
 		 ft_error ft_error_unknown ft_freestrarr ft_uitoa \
 		 ft_bswap_utils ft_putbytes ft_putbytes_fd ft_sizeof_ndarray ft_bswap \
 		 ft_strjoin_ml ft_count_lines ft_count_chars ft_getopts ft_random \
 		 ft_md5 ft_sha224 ft_sha256 ft_sha384 ft_sha512 ft_ultoa ft_putbool
 
-RM = rm -f
+SRC		= $(patsubst %, %.c, $(FUNCTS))
 
-CFILES = $(patsubst %, %.c, $(FUNCTS))
-OBJECTS = $(patsubst %, %.o, $(FUNCTS))
-FLAGS = -Wall -Wextra -Werror -g
+OBJ		= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 
-.PHONY = clean fclean re
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror -g
 
-all: $(NAME)
+SRCDIR	= ./srcs/
+INCDIR	= ./includes/
+OBJDIR	= ./objs/
 
-$(NAME):
-	gcc -c $(FLAGS) $(CFILES)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+all: obj $(NAME)
+
+obj:
+	@mkdir -p $(OBJDIR)
+
+$(OBJDIR)%.o:$(SRCDIR)%.c
+	@echo libft: Compiling $@
+	@$(CC) $(CFLAGS) -I $(INCDIR) -o $@ -c $<
+
+$(NAME): $(OBJ)
+	@echo libft: Compiling $(NAME)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 clean:
-	$(RM) $(OBJECTS)
+	@echo libft: Removing objects folder
+	@rm -rf $(OBJDIR)
 
 fclean: clean
-	$(RM) $(NAME)
+	@echo libft: Removing libft.a
+	@rm -rf $(NAME)
 
 re: fclean all
