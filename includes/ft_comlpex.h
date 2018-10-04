@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/02 19:11:33 by gwood             #+#    #+#             */
-/*   Updated: 2018/10/02 19:12:33 by gwood            ###   ########.fr       */
+/*   Updated: 2018/10/02 20:15:40 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 typedef struct	s_complex
 {
-	double real;
-	double imag;
+	double r;
+	double i;
 }				t_complex;
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bswap_utils.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwood <gwood@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 10:17:47 by gwood             #+#    #+#             */
-/*   Updated: 2018/08/13 12:36:54 by gwood            ###   ########.fr       */
+/*   Updated: 2018/10/03 18:28:00 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include "libft.h"
 # include <inttypes.h>
 
+# define FT_LITTLE_ENDIAN 0
+# define FT_BIG_ENDIAN 1
+# define FT_BYTE_ORDER (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
 typedef void	(*t_bswap_fnc)(void *const data);
 
 typedef struct	s_bswap

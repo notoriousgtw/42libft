@@ -6,7 +6,7 @@
 #    By: gwood <gwood@42.us.org>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/30 14:30:20 by mhurd             #+#    #+#              #
-#    Updated: 2018/10/02 20:09:19 by gwood            ###   ########.fr        #
+#    Updated: 2018/10/03 15:44:04 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ FUNCTS = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 		 ft_error ft_error_unknown ft_freestrarr ft_uitoa \
 		 ft_bswap_utils ft_putbytes ft_putbytes_fd ft_sizeof_ndarray ft_bswap \
 		 ft_strjoin_ml ft_count_lines ft_count_chars ft_getopts ft_random \
-		 ft_md5 ft_sha224 ft_sha256 ft_sha384 ft_sha512 ft_ultoa ft_putbool
+		 ft_md5 ft_sha224 ft_sha256 ft_sha384 ft_sha512 ft_ultoa ft_putbool \
+		 ft_color
 
 SRC		= $(patsubst %, %.c, $(FUNCTS))
 
